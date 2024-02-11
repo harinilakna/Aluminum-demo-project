@@ -1,0 +1,23 @@
+<div class="col-md-6 offset-md-3">
+<h2>create-employee works!</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label> First Name</label>
+        <input type="text" class="form-control" id="firstName" [(ngModel)] = "employee.firstName" name="firstName" formControlName="firstName">
+        <div *ngIf="name && name.invalid && name.touched"><span>Not valid</span>
+ </div>
+        
+    </div>
+    <div class="form-group">
+        <label> Last Name</label>
+        <input type="text" class="form-control" id="lastName" [(ngModel)] = "employee.lastName" name="lastName" formControlName="lastName">
+    </div>
+    <div class="form-group">
+        <label> Age</label>
+        <input type="text" class="form-control" id="age" [(ngModel)] = "employee.age" name="age" formControlName="age" >
+    </div>
+    <br>
+    <button [disabled]="form.invalid" class="btn btn-success" type="submit">submit</button>
+</form>
+
+</div>
